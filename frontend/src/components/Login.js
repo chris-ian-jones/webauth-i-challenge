@@ -11,12 +11,11 @@ const ComponentContainer = styled.div`
   justify-content: center;
 `
 
-const SignUp = () => {
+const Login = () => {
   const [credentials, setCredentials] = useState({
     username: '',
     password: ''
   })
-  console.log(credentials)
 
   const onChangeHandler = event => {
     setCredentials({
@@ -28,7 +27,7 @@ const SignUp = () => {
   const onSubmitHandler = event => {
     event.preventDefault()
 
-    axios.post('http://localhost:5555/api/register', credentials)
+    axios.post('http://localhost:5555/api/login', credentials)
       .then(success => {
         console.log(success)
       })
@@ -62,10 +61,10 @@ const SignUp = () => {
             onChange={onChangeHandler} 
           />
         </Form.Field>
-        <Button type='submit'>Sign Up</Button>
+        <Button type='submit'>Login</Button>
     </Form>
   </ComponentContainer>
   )
 }
 
-export default SignUp
+export default Login
