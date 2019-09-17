@@ -16,7 +16,6 @@ const SignUp = () => {
     username: '',
     password: ''
   })
-  console.log(credentials)
 
   const onChangeHandler = event => {
     setCredentials({

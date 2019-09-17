@@ -40,6 +40,18 @@ const Login = () => {
     })
   }
 
+  const onLogoutHandler = event => {
+    event.preventDefault()
+
+    axios.get('http://localhost:5555/api/logout')
+      .then(success => {
+        console.log(success)
+      })
+      .catch(error => {
+        console.log(error)
+      })
+  }
+
   return (
     <ComponentContainer>
       <Form onSubmit={onSubmitHandler}>
@@ -62,6 +74,7 @@ const Login = () => {
           />
         </Form.Field>
         <Button type='submit'>Login</Button>
+        <Button type='submit' onClick={onLogoutHandler}>Logout</Button>
     </Form>
   </ComponentContainer>
   )
